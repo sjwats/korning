@@ -1,0 +1,36 @@
+<h1>Employee Info</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @employee.first_name %><%= @employee.last_name %></td>
+      <td><%= @employee.email %></td>
+    </tr>
+    <tr>
+      <th>Total Sales</th>
+      <th>Customer and Account Number</th>
+      <th>Product Name</th>
+      <th>Sale Date </th>
+    </tr>
+
+    <% @sales.each do |sale| %>
+      <tr>
+          <td> <%= sale.sale_amount %> </td>
+          <td> <%= sale.customer_and_account_no %> </td>
+          <td> <%= sale.product_name %> </td>
+          <td> <%= sale.sale_date %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
