@@ -11,7 +11,6 @@ class ChangeSalesEmployeeNameToId < ActiveRecord::Migration
 
       sale.employee_id = employee.id
       sale.save
-
     end
 
 
