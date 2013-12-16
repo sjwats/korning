@@ -1,0 +1,21 @@
+<h1>Customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account Number</th>
+      <th>Website</th>
+      <th>Invoice Frequency</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.account_number %></td>
+        <td><%= customer.website %></td>
+        <td><%= customer.invoice_frequency %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

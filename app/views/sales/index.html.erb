@@ -1,0 +1,22 @@
+<h1>Sales (Trailing 3 months)</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sale Date</th>
+      <th>Sale Amount</th>
+      <th>Invoice Number</th>
+      <th>Units Sold</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.account_number %></td>
+        <td><%= sale.website %></td>
+        <td><%= sale.invoice_frequency %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
