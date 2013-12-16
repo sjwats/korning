@@ -3,19 +3,25 @@
 <table>
   <thead>
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
+      <th><bold>First Name</bold></th>
+      <th><bold>Last Name</bold></th>
+      <th><bold>Email</bold></th>
     </tr>
   </thead>
 
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= employee.first_name %></td>
+        <td><%= link_to "#{employee.first_name}", employee_path(employee) %></td>
         <td><%= employee.last_name %></td>
         <td><%= employee.email %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<br>
+<br>
+
+<h3> Links: </h3>
+<%= link_to 'Sales', sales_path %> <br>
+<%= link_to 'Customer', customer_index_path %>
