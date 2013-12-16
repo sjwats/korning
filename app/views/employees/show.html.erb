@@ -1,29 +1,34 @@
-<h1> Employee Sales </h1>
+<h1>Employee Sales</h1>
 
 <table>
   <thead>
     <tr>
-      <th><%= @employee.first_name %></th>
-      <th><%= @employee.last_name %></th>
-      <th><%= @employee.email %></th>
+      <th>Name</th>
+      <th>Email</th>
     </tr>
   </thead>
-
   <tbody>
-    <td> Sale Amount </td>
-    <td> Sale Date </td>
-    <td> Sale Invoice No. </td>
+    <tr>
+      <td><%= @employee.first_name %><%= @employee.last_name %></td>
+      <td><%= @employee.email %></td>
+    </tr>
+    <tr>
+      <th>Total Sales</th>
+      <th>Customer and Account Number</th>
+      <th>Product Name</th>
+      <th>Sale Date </th>
+    </tr>
+
     <% @sales.each do |sale| %>
       <tr>
-        <td><%= sale.sale_amount.round(2) %></td>
-        <td><%= sale.sale_date %></td>
-        <td><%= sale.invoice_no %></td>
+          <td> <%= sale.sale_amount.to_f.round(2) %> </td>
+          <td> <%= sale.customer_and_account_no %> </td>
+          <td> <%= sale.product_name %> </td>
+          <td> <%= sale.sale_date %> </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-
 
 
 

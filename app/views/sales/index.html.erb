@@ -1,4 +1,4 @@
-<h1>Sales (Trailing 3 months)</h1>
+<h1>Sales (Trailing 15 months)</h1>
 
 <table>
   <thead>
@@ -7,15 +7,18 @@
       <th>Sale Amount</th>
       <th>Invoice Number</th>
       <th>Units Sold</th>
+      <th>Price Per Unit</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @sales.each do |sale| %>
+    <% @trailing_sales.each do |sale| %>
       <tr>
-        <td><%= sale.account_number %></td>
-        <td><%= sale.website %></td>
-        <td><%= sale.invoice_frequency %></td>
+        <td><%= sale.sale_date %></td>
+        <td><%= sale.sale_amount.round(2) %></td>
+        <td><%= sale.invoice_no %></td>
+        <td><%= sale.units_sold %></td>
+        <td><%= (sale.sale_amount / sale.units_sold).round(2) %></td>
       </tr>
     <% end %>
   </tbody>
